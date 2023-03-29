@@ -1,9 +1,8 @@
 from socket import *
 
-serverName = '255.255.255.255'
+serverName = 'localhost'
 serverPort = 12000
 clientSocket = socket(AF_INET, SOCK_DGRAM)
-clientSocket.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
 
 message = input('Input message:')
 clientSocket.sendto(message.encode(), (serverName, serverPort))
